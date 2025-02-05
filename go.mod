@@ -1,4 +1,4 @@
-module db_redis
+module go_db_redis
 
 go 1.21.3
 
