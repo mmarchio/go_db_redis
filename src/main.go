@@ -80,5 +80,3 @@ func (r *RedisClient) DeleteDocument(id string) error {
     }
     return nil
 }
-
-func main() {}
