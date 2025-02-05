@@ -22,11 +22,17 @@ type RedisClient struct {
     client *redis.Client
 }
 
+type RedisConfig struct {
+    Domain string
+    Port int32
+    Password string
+}
+
 // NewRedisClient initializes a new Redis client
-func NewRedisClient(pass string) *RedisClient {
+func NewRedisClient(cnf *RedisConfig) *RedisClient {
     rdb := redis.NewClient(&redis.Options{
-        Addr:     "localhost:6379",
-        Password: pass, // no password set
+        Addr:     fmt.Sprintf("%s:%d", cnf.Domain, cnf.Port),
+        Password: cnf.Password, // no password set
         DB:       0,  // use default DB
     })
 
