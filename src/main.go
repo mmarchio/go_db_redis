@@ -1,4 +1,4 @@
-package go_db_redis
+package main
 
 import (
     "context"
@@ -80,3 +80,5 @@ func (r *RedisClient) DeleteDocument(id string) error {
     }
     return nil
 }
+
+func main(){}
