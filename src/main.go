@@ -5,7 +5,6 @@ import (
 	"encoding/json"
     "fmt"
     "github.com/go-redis/redis/v8"
-    "log"
 )
 
 var ctx = context.Background()
