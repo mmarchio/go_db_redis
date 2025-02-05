@@ -1,4 +1,4 @@
-module go_db_redis
+module github.com/mmarchio/go_db_redis
 
 go 1.21.3
 
