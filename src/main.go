@@ -82,41 +82,4 @@ func (r *RedisClient) DeleteDocument(id string) error {
     return nil
 }
 
-func main() {
-    redisClient := NewRedisClient()
-
-    // Create a new document
-    doc := &Document{
-        ID:    "123",
-        Name:  "example",
-        Value: "value",
-    }
-
-    err := redisClient.CreateDocument(doc)
-    if err != nil {
-        log.Fatalf("Failed to create document: %v", err)
-    }
-    fmt.Println("Document created")
-
-    // Read the document
-    readDoc, err := redisClient.ReadDocument(doc.ID)
-    if err != nil {
-        log.Fatalf("Failed to read document: %v", err)
-    }
-    fmt.Printf("Read document: %+v\n", readDoc)
-
-    // Update the document
-    doc.Value = "new value"
-    err = redisClient.UpdateDocument(doc)
-    if err != nil {
-        log.Fatalf("Failed to update document: %v", err)
-    }
-    fmt.Println("Document updated")
-
-    // Delete the document
-    err = redisClient.DeleteDocument(doc.ID)
-    if err != nil {
-        log.Fatalf("Failed to delete document: %v", err)
-    }
-    fmt.Println("Document deleted")
-}
+func main() {}
