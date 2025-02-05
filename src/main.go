@@ -1,4 +1,4 @@
-package main
+package go_db_redis
 
 import (
     "context"
